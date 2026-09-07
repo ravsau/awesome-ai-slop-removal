@@ -1,0 +1,44 @@
+name: Add or correct a rule
+description: A tell RULES.md misses, or a replacement that is wrong.
+title: "[rule] "
+labels: ["rules"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this
+      options:
+        - A tell that is missing
+        - A replacement that is wrong or weak
+        - A category or precision label that is wrong
+    validations:
+      required: true
+  - type: input
+    id: tell
+    attributes:
+      label: The tell
+      placeholder: "\"in a very real sense\""
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: The plain replacement
+      description: Required. A ban list with no replacement is half a rule.
+      placeholder: Delete the phrase.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Where have you seen it cluster? A link to a rule set that already documents it is ideal.
+    validations:
+      required: false
+  - type: textarea
+    id: humanuse
+    attributes:
+      label: When would a human write this legitimately
+      description: Every rule over-fires somewhere. Naming where keeps the precision labels honest.
+    validations:
+      required: true

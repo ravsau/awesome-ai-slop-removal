@@ -1,0 +1,47 @@
+name: Add a project
+description: A tool, rule set, or paper missing from the list.
+title: "[add] "
+labels: ["new-entry"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Rule sets and agent skills
+        - Deterministic linters
+        - System prompts
+        - Detectors
+        - Design and UI slop
+        - Code slop
+        - Non-English
+        - Web tools
+        - Research or dataset
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it contribute that the listed projects do not
+      description: One or two sentences. "Another humanizer" is not enough — say what is different.
+    validations:
+      required: true
+  - type: checkboxes
+    id: bar
+    attributes:
+      label: The bar
+      description: See CONTRIBUTING.md.
+      options:
+        - label: It has a public rule set or working code, not just a landing page.
+          required: true
+        - label: It is not a paid black-box "AI detector" that sells authorship verdicts.
+          required: true
+        - label: I am not the sole author, OR I have said so below.
+          required: false

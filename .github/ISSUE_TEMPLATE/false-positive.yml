@@ -1,0 +1,51 @@
+name: Report a false positive
+description: A rule fired on writing that was fine. The most useful report you can file.
+title: "[false positive] "
+labels: ["false-positive", "rules"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every rule in RULES.md fires on genuine human writing sometimes. The only
+        way to find out where is for someone to hit it. Thank you for filing.
+  - type: textarea
+    id: text
+    attributes:
+      label: The text that was flagged
+      description: Paste the sentence or paragraph. That is usually all we need.
+      placeholder: The station's canopies were cast a mile up the line at Fenwick & Sons.
+    validations:
+      required: true
+  - type: input
+    id: rule
+    attributes:
+      label: Which rule fired
+      description: The rule name, or the word or phrase that was highlighted.
+      placeholder: Superficial -ing tail
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it was fine
+      description: One line. What was the rule missing?
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you hit it
+      options:
+        - Slop Score (enhancepost.com/slopscore)
+        - EnhancePost enhancer
+        - RULES.md, reading it
+        - Another tool on the list
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you file
+      options:
+        - label: The flagged text is mine to share publicly.
+          required: true
