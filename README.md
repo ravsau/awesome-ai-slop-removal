@@ -1,4 +1,4 @@
-# Awesome AI Slop [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome AI Slop Removal [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > Tools, rule sets, and research for detecting and removing AI slop — the words, phrases, and structural habits that make writing read as machine-made.
 
@@ -21,6 +21,7 @@ This list collects what people have built to fight it, and the taxonomy of what 
 - [Non-English](#non-english)
 - [Web tools](#web-tools)
 - [The taxonomy](#the-taxonomy)
+- [Related lists](#related-lists)
 - [Contributing and feedback](#contributing-and-feedback)
 
 ## Why a list
@@ -33,7 +34,7 @@ The three things this list adds:
 
 1. **One taxonomy** ([RULES.md](RULES.md)) instead of a dozen overlapping ones.
 2. **Category labels** so you can tell an agent skill from a linter from a detector before you install anything.
-3. **A false-positive channel.** Every rule here fires on genuine human writing sometimes. [Report one](https://github.com/ravsau/awesome-ai-slop/issues/new?template=false-positive.yml) and it gets fixed in the taxonomy.
+3. **A false-positive channel.** Every rule here fires on genuine human writing sometimes. [Report one](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=false-positive.yml) and it gets fixed in the taxonomy.
 
 Star counts and licenses are from the GitHub API, checked 2026-09-07.
 
@@ -157,14 +158,29 @@ The short version. Full detail, with replacements, in **[RULES.md](RULES.md)**.
 good human writing. One is a coincidence. Five in a paragraph is a fingerprint.
 Category 1 is the exception: those have no human cause, so one is enough.
 
+## Related lists
+
+Three neighbours, none of which this list duplicates. Check them — one may fit you better.
+
+| List | ★ | What it does differently |
+|---|--:|---|
+| [hwajongpark/awesome-slop](https://github.com/hwajongpark/awesome-slop) | 5 | Organized **by language**: Korean 번역투, Russian канцелярит, Chinese 公文腔, Vietnamese Hán-Việt. Go here if you publish outside English — it is deeper on that than the [Non-English](#non-english) section below. |
+| [discountry/awesome-anti-ai-slop](https://github.com/discountry/awesome-anti-ai-slop) | 12 | A tools collection with a Chinese README. One commit, last touched 2026-05-27. |
+| [yikerman/awesome-ai-slop](https://github.com/yikerman/awesome-ai-slop) | 25 | The opposite list: a curated collection **of** AI slop projects, as mockery. Named almost identically to this one — if you were looking for that, it is there. |
+
+What this list adds that none of them do: **[RULES.md](RULES.md)**, a single merged
+taxonomy of what every tool actually detects, with a plain replacement for each tell
+and a precision label per category. The lists above tell you which tool to install.
+This one also tells you what the tools are looking for, so you can do it by hand.
+
 ## Contributing and feedback
 
 Four issue forms, so nothing needs a pull request unless you want to write one:
 
-- **[Add a project](https://github.com/ravsau/awesome-ai-slop/issues/new?template=add-project.yml)** — anything missing from the tables above.
-- **[Add or correct a rule](https://github.com/ravsau/awesome-ai-slop/issues/new?template=add-rule.yml)** — a tell RULES.md does not cover, or a replacement that is wrong.
-- **[Report a false positive](https://github.com/ravsau/awesome-ai-slop/issues/new?template=false-positive.yml)** — a rule that fired on writing that was fine. **The most useful report you can file.** Every rule here over-fires somewhere, and the only way to find out is for someone to hit it.
-- **[Tool feedback](https://github.com/ravsau/awesome-ai-slop/issues/new?template=tool-feedback.yml)** — the score felt wrong, the tool broke, an output was bad.
+- **[Add a project](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=add-project.yml)** — anything missing from the tables above.
+- **[Add or correct a rule](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=add-rule.yml)** — a tell RULES.md does not cover, or a replacement that is wrong.
+- **[Report a false positive](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=false-positive.yml)** — a rule that fired on writing that was fine. **The most useful report you can file.** Every rule here over-fires somewhere, and the only way to find out is for someone to hit it.
+- **[Tool feedback](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=tool-feedback.yml)** — the score felt wrong, the tool broke, an output was bad.
 
 You can also send a false positive straight from [Slop Score](https://enhancepost.com/slopscore/#fb) without a GitHub account. Those land in the same triage.
 

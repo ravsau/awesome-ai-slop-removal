@@ -7,5 +7,5 @@ contact_links:
     url: https://enhancepost.com/slopscore/
     about: Paste text, get a 0-100 density score. Runs in your browser, uploads nothing.
   - name: The full rule set
-    url: https://github.com/ravsau/awesome-ai-slop/blob/main/RULES.md
+    url: https://github.com/ravsau/awesome-ai-slop-removal/blob/main/RULES.md
     about: 13 categories, 200+ tells, each with a plain replacement.

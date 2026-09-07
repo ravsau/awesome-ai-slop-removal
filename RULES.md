@@ -252,6 +252,6 @@ worse outcome than the slop was.
 ## Corrections
 
 Every rule here over-fires somewhere. If one hit your writing and was wrong,
-[report the false positive](https://github.com/ravsau/awesome-ai-slop/issues/new?template=false-positive.yml).
+[report the false positive](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=false-positive.yml).
 That is the highest-value contribution to this file, and it is the only way the
 precision labels above stay honest.

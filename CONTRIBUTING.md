@@ -1,6 +1,6 @@
 # Contributing
 
-Use an [issue form](https://github.com/ravsau/awesome-ai-slop/issues/new/choose).
+Use an [issue form](https://github.com/ravsau/awesome-ai-slop-removal/issues/new/choose).
 Nothing here needs a pull request unless you want to write one.
 
 ## The bar for a project
@@ -34,7 +34,7 @@ A rule needs three things:
 
 They are also the hardest to get, because the person who hits one is annoyed and
 closes the tab. If you file one you are doing the single most useful thing
-available: [the form](https://github.com/ravsau/awesome-ai-slop/issues/new?template=false-positive.yml)
+available: [the form](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=false-positive.yml)
 takes a minute.
 
 ## Style
