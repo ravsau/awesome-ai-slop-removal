@@ -23,8 +23,9 @@ enough. Check for these first: it is the fastest pass and the only certain one.
 | Unfilled placeholder | `[Your Name]`, `[INSERT URL]`, `[COMPANY]`, `[DATE]`, `lorem ipsum` | Fill with the real value. **Never invent one** — the tell was the unfinished template, and a fabricated name is worse. |
 | Leaked citation token | `citeturn0search0`, `oai_citation`, `contentReference`, `【12†source】` | Delete. Leave the claim as it was. Do not invent a source to fill the gap. |
 | Chat tracking parameter | `?utm_source=chatgpt.com`, `perplexity.ai`, `claude.ai`, `gemini.google.com` | Strip everything from the `?` onward. |
-| Zero-width / control chars | U+200B, U+200D, U+FEFF, U+00AD, bidi U+202A–U+202E | Invisible on screen, visible to every detector. Retype or paste as plain text. |
-| Non-standard spaces | U+00A0, U+202F, U+2000–U+200A, U+3000 | Look like spaces, are not. Normalize to U+0020. |
+| Zero-width / control chars | U+200B, U+200C, U+FEFF, U+00AD, bidi U+202A–U+202E | Invisible on screen, visible to every detector. Retype or paste as plain text. |
+| Zero-width joiner (U+200D) | `pass<ZWJ>word` | Strip it **between letters only**. U+200D is structural inside emoji — family, profession and flag emoji are built from it, so a blanket strip breaks ordinary human text. |
+| Non-standard spaces | U+00A0, U+202F, U+2000–U+200A, U+3000 | Normalize to U+0020 **in English text only**. Not a certain tell: any Word or web paste makes them, and U+3000 is the correct separator in Japanese and Chinese. |
 | Homoglyphs | Cyrillic `а`/`о` inside `pаssword`, `wrоng` | Usually a paraphrasing tool evading a detector. Retype the word. |
 | Assistant register | "As an AI language model", "as of my last knowledge update", "Great question!" | Delete the sentence. |
 
