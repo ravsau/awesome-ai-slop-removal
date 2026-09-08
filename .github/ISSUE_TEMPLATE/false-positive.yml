@@ -36,7 +36,7 @@ body:
     attributes:
       label: Where did you hit it
       options:
-        - Slop Score (enhancepost.com/slopscore)
+        - Anti-Slop Editor (enhancepost.com/antislop)
         - EnhancePost enhancer
         - RULES.md, reading it
         - Another tool on the list

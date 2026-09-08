@@ -1,5 +1,5 @@
 name: Tool feedback
-description: The score felt wrong, something broke, or an output was bad.
+description: A suggestion was unclear, something broke, or an edit changed the meaning.
 title: "[tool] "
 labels: ["tool-feedback"]
 body:
@@ -8,8 +8,7 @@ body:
     attributes:
       label: Which tool
       options:
-        - Slop Score (enhancepost.com/slopscore)
-        - EnhancePost enhancer
+        - Anti-Slop Editor (enhancepost.com/antislop)
         - The slop words list article
         - RULES.md
     validations:
@@ -19,10 +18,10 @@ body:
     attributes:
       label: What went wrong
       options:
-        - The score felt too high
-        - The score felt too low
-        - It missed slop that is obviously there
-        - A rewrite changed my meaning
+        - A rule flagged appropriate writing
+        - A rule explanation was unclear
+        - It missed a listed pattern
+        - An accepted edit changed my meaning
         - Something broke or did not load
         - A suggestion
     validations:
@@ -31,7 +30,7 @@ body:
     id: detail
     attributes:
       label: What happened
-      description: If a score was involved, paste the text and the number you got.
+      description: Include the rule ID and a short non-confidential example. Do not paste private drafts or personal details.
     validations:
       required: true
   - type: input

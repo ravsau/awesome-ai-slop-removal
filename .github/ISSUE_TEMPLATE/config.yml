@@ -1,11 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Send feedback without a GitHub account
-    url: https://enhancepost.com/slopscore/#fb
-    about: The in-page form on Slop Score. Lands in the same triage as these issues.
-  - name: Score a draft against these rules
-    url: https://enhancepost.com/slopscore/
-    about: Paste text, get a 0-100 density score. Runs in your browser, uploads nothing.
-  - name: The full rule set
+  - name: Review a draft in the Anti-Slop Editor
+    url: https://enhancepost.com/antislop/
+    about: Review specific suggestions and explicit replacements. Draft text stays in your browser.
+  - name: The generated rule reference
     url: https://github.com/ravsau/awesome-ai-slop-removal/blob/main/RULES.md
-    about: 13 categories, 200+ tells, each with a plain replacement.
+    about: Stable rule IDs, editing reasons, and replacement or manual-review guidance.

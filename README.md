@@ -6,8 +6,8 @@
 
 This list collects what people have built to fight it, and the taxonomy of what they all detect.
 
-- **[RULES.md](RULES.md)** — the tell taxonomy: 13 categories, 200+ tells, each with a plain replacement. Compiled from the rule files of every project below.
-- **[Slop Score](https://enhancepost.com/slopscore/)** — paste text, get a 0–100 density score against those rules. Runs in your browser, uploads nothing.
+- **[RULES.md](RULES.md)** — the generated rule reference: matches, editing reasons, and explicit replacement or review actions. The rule source lives in [markdownme.com](https://github.com/ravsau/markdownme.com/tree/main/scripts/enhancepost).
+- **[Anti-Slop Editor](https://enhancepost.com/antislop/)** — review specific suggestions and choose each change. Draft text stays in your browser. Basic usage events exclude text.
 
 ## Contents
 
@@ -84,10 +84,9 @@ Score or classify text rather than rewrite it.
 | [ctkrug/tellsign](https://github.com/ctkrug/tellsign) | 0 | MIT | In-browser highlighter with weighted word and phrase tells. Deliberately a style checker, not a black-box authorship verdict. |
 
 > [!WARNING]
-> No detector can prove authorship. They measure style, and they are wrong often
-> enough that using one to accuse a student or a colleague is indefensible. The
-> one exception is the machine-artifact category in [RULES.md](RULES.md) — leaked
-> citation tokens and unfilled placeholders have no human cause.
+> A pattern match does not establish who wrote a text. Placeholders, citation
+> tokens, and tracking links need context too. Use the rules to review writing,
+> not to accuse a student or colleague of using AI.
 
 ## Design and UI slop
 
@@ -128,35 +127,20 @@ No install.
 
 | Tool | What it does |
 |---|---|
-| [Slop Score](https://enhancepost.com/slopscore/) | Paste text, get a 0–100 density score and a per-category breakdown against [RULES.md](RULES.md). Client-side, nothing uploaded, no signup. |
-| [EnhancePost](https://enhancepost.com/) | Rewrites what the score finds. Underlines each hit with a one-click plain replacement, and de-slops without inventing facts. |
-| [The AI slop words and phrases list](https://enhancepost.com/blog/ai-slop-words-phrases-list/) | The long-form version of RULES.md, with a replacement for every entry. |
+| [Anti-Slop Editor](https://enhancepost.com/antislop/) | Highlights writing patterns for review. Offers explicit replacements where available and leaves other edits to you. Draft text stays in your browser. |
+| [The AI slop words and phrases list](https://enhancepost.com/blog/ai-slop-words-phrases-list/) | The public rule reference, generated from the same source as the editor and RULES.md. |
 
-<sub>Slop Score and EnhancePost are maintained by this list's author. Everything else is third-party.</sub>
+<sub>EnhancePost is maintained by this list's author. Everything else is third-party.</sub>
 
 ## The taxonomy
 
-The short version. Full detail, with replacements, in **[RULES.md](RULES.md)**.
+See **[RULES.md](RULES.md)** for the current categories, examples, and editing actions.
+That file and the EnhancePost reference article are generated from one structured
+[source](https://github.com/ravsau/markdownme.com/blob/main/scripts/enhancepost/rules.json).
 
-| # | Category | Example | Precision |
-|---|---|---|---|
-| 1 | Machine artifacts | `[Your Name]`, `utm_source=chatgpt.com`, zero-width chars | **Certain** |
-| 2 | Marketing templates | "unlock the full potential", "stay ahead of the curve" | Very high |
-| 3 | Sentence patterns | superficial `-ing` tails, weasel attribution | High |
-| 4 | Structural patterns | em dashes, negation frames, closing aphorisms | High |
-| 5 | Tell-phrases | "in today's fast-paced world", "let's dive in" | High |
-| 6 | Brochure register | nestled, picturesque, world-class | Medium |
-| 7 | Tell-words | delve, leverage, tapestry, holistic | Low alone |
-| 8 | Business jargon | circle back, move the needle, bandwidth | Low alone |
-| 9 | Transition crutches | moreover, furthermore, notably | Low alone |
-| 10 | Hyphenated clichés | mission-critical, battle-tested, plug-and-play | Low alone |
-| 11 | Filler grammar | "make a decision on" → "decides" | Low alone |
-| 12 | Model dialects | Claude: genuinely, nuanced · GPT: supercharge, skyrocket | Context only |
-| 13 | Rhythm and cadence | uniform sentence and paragraph length | Human eye only |
-
-**Density is the signal, not the word.** Every entry in categories 6–11 appears in
-good human writing. One is a coincidence. Five in a paragraph is a fingerprint.
-Category 1 is the exception: those have no human cause, so one is enough.
+Formatting findings identify things such as placeholders and unusual characters.
+Style suggestions identify wording to review. Neither category proves authorship.
+A phrase can be appropriate in context, so keeping it is a valid decision.
 
 ## Related lists
 
@@ -168,10 +152,8 @@ Three neighbours, none of which this list duplicates. Check them — one may fit
 | [discountry/awesome-anti-ai-slop](https://github.com/discountry/awesome-anti-ai-slop) | 12 | A tools collection with a Chinese README. One commit, last touched 2026-05-27. |
 | [yikerman/awesome-ai-slop](https://github.com/yikerman/awesome-ai-slop) | 25 | The opposite list: a curated collection **of** AI slop projects, as mockery. Named almost identically to this one — if you were looking for that, it is there. |
 
-What this list adds that none of them do: **[RULES.md](RULES.md)**, a single merged
-taxonomy of what every tool actually detects, with a plain replacement for each tell
-and a precision label per category. The lists above tell you which tool to install.
-This one also tells you what the tools are looking for, so you can do it by hand.
+The rule reference explains the patterns used by the EnhancePost editor. The
+project tables above help you compare other implementations and their approaches.
 
 ## Contributing and feedback
 
@@ -180,13 +162,13 @@ Four issue forms, so nothing needs a pull request unless you want to write one:
 - **[Add a project](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=add-project.yml)** — anything missing from the tables above.
 - **[Add or correct a rule](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=add-rule.yml)** — a tell RULES.md does not cover, or a replacement that is wrong.
 - **[Report a false positive](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=false-positive.yml)** — a rule that fired on writing that was fine. **The most useful report you can file.** Every rule here over-fires somewhere, and the only way to find out is for someone to hit it.
-- **[Tool feedback](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=tool-feedback.yml)** — the score felt wrong, the tool broke, an output was bad.
+- **[Tool feedback](https://github.com/ravsau/awesome-ai-slop-removal/issues/new?template=tool-feedback.yml)** — a suggestion was unclear, the tool broke, or an edit damaged the meaning.
 
-You can also send a false positive straight from [Slop Score](https://enhancepost.com/slopscore/#fb) without a GitHub account. Those land in the same triage.
+When reporting a false positive, include the stable rule ID from [RULES.md](RULES.md) and a short, non-confidential example.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for what gets accepted. Short version: a
-project needs a public rule set or working code, and a rule needs a plain-English
-replacement — a ban list with no replacement is half a rule.
+project needs a public rule set or working code. A rule needs an editing reason
+and a safe replacement or clear manual-review guidance.
 
 ## License
 

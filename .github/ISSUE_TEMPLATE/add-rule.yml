@@ -10,7 +10,7 @@ body:
       options:
         - A tell that is missing
         - A replacement that is wrong or weak
-        - A category or precision label that is wrong
+        - A category or explanation that is wrong
     validations:
       required: true
   - type: input
@@ -23,9 +23,9 @@ body:
   - type: input
     id: replacement
     attributes:
-      label: The plain replacement
-      description: Required. A ban list with no replacement is half a rule.
-      placeholder: Delete the phrase.
+      label: Proposed editing action
+      description: Give a safe replacement or explain what the writer should review manually.
+      placeholder: Explain when a replacement is appropriate.
     validations:
       required: true
   - type: textarea
@@ -39,6 +39,6 @@ body:
     id: humanuse
     attributes:
       label: When would a human write this legitimately
-      description: Every rule over-fires somewhere. Naming where keeps the precision labels honest.
+      description: Give a legitimate use as well as an example that needs editing.
     validations:
       required: true

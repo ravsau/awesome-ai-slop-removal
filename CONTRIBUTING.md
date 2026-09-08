@@ -24,11 +24,10 @@ are mine and are labelled as such.
 A rule needs three things:
 
 1. **The tell.** The word, phrase, or pattern.
-2. **A plain replacement.** Required. A ban list with no replacement is half a
-   rule — it tells a writer to stop without telling them what to do, and the
-   usual result is the same sentence with a thesaurus applied.
+2. **An editing reason and action.** Give a safe replacement or clear manual-review
+   guidance. Do not make deletion the default for words that carry meaning.
 3. **When a human writes it legitimately.** Every rule over-fires somewhere.
-   Naming where is what keeps the precision labels in RULES.md honest.
+   Include a legitimate example alongside the example that needs editing.
 
 ## False positives are the most valuable report
 
@@ -47,3 +46,17 @@ takes a minute.
 
 Star counts and licenses come from the GitHub API and are dated in README.md.
 They go stale. If one is badly out of date, say so in an issue.
+
+## Updating the generated reference
+
+Do not edit RULES.md by hand. Update the structured catalog in
+[markdownme.com/scripts/enhancepost/rules.json](https://github.com/ravsau/markdownme.com/blob/main/scripts/enhancepost/rules.json).
+The generator produces the editor data, public article tables, and RULES.md.
+From that checkout, export a reviewed copy to this checkout:
+
+```sh
+python3 scripts/enhancepost/build_rules.py --docs-dest ../awesome-ai-slop-removal/RULES.md
+```
+
+Run the EnhancePost checks before submitting a rule change. A regex match identifies
+a pattern, not authorship. Include a test for a legitimate use when changing a rule.
